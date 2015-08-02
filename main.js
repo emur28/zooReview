@@ -1,12 +1,10 @@
-Ext.ns('InfoSite.thing.Manager');
+Ext.ns('ZooReview.Manager');
 
 Ext.require([
- //   'Ext.grid.*',
- //   'Ext.data.*',
   //  'Ext.dd.*'
 ]);
 
-InfoSite.thing.Manager = function() {
+ZooReview.Manager = function() {
 
 	this.pageTitle = Ext.create('Ext.Img', {
 		src: 'media/logo.png',
@@ -55,7 +53,7 @@ InfoSite.thing.Manager = function() {
     });
 
 
-    this.classShopper = new InfoSite.thing.ClassShopper();
+    this.classShopper = new ZooReview.ClassShopper();
 
 
     this.mainPanel =  Ext.create('Ext.Panel', {		
@@ -79,20 +77,20 @@ InfoSite.thing.Manager = function() {
 };
 
 
-var infoSiteManager = null;
+var zooReviewManager = null;
 
 
 var docReadyFunction = function(){
 
 	Ext.QuickTips.init();
 	
-	infoSiteManager = new InfoSite.thing.Manager();
+	zooReviewManager = new ZooReview.Manager();
 
 	Ext.create('Ext.container.Viewport', {
 		layout: 'fit' ,
-		items: 	[ infoSiteManager.mainPanel ] ,
+		items: 	[ zooReviewManager.mainPanel ] ,
 		renderTo : Ext.getBody() ,
-		id: 'infoSiteManagerViewPort' ,
+		id: 'zooReviewManagerViewPort' ,
 		margins: '0 10 0 10' ,
 		frame: true
 	});

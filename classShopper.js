@@ -1,7 +1,6 @@
-Ext.ns('InfoSite.thing.ClassShopper');
+Ext.ns('ZooReview.ClassShopper');
 
-// This is a panel that will contain a table of elements
-InfoSite.thing.ClassShopper = function() {
+ZooReview.ClassShopper = function() {
 
     //used to call helper functions from within listener functions
     var classShopper = this;
