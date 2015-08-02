@@ -42,9 +42,6 @@ InfoSite.thing.Manager = function() {
 	});
 
 
-    this.courses = new InfoSite.thing.Courses();
-    this.shoppingCart = new InfoSite.thing.ShoppingCart();
-
     this.toolbar = new Ext.Toolbar({
         dock: 'top',
         layout: {
@@ -57,10 +54,14 @@ InfoSite.thing.Manager = function() {
         ]
     });
 
-    this.mainPanel =  Ext.create('Ext.Panel', {		
-        layout: 'border' ,
-        region: 'center' ,
 
+    this.classShopper = new InfoSite.thing.ClassShopper();
+
+
+    this.mainPanel =  Ext.create('Ext.Panel', {		
+        layout: 'border',
+
+        id: 'test',
         tbar: [
             this.pageTitle,
             '->',
@@ -71,8 +72,7 @@ InfoSite.thing.Manager = function() {
         ],
 
         items: [
-            this.courses.cPanel,
-            this.shoppingCart.scPanel
+            this.classShopper.classShopperPanel,
         ]
 	});
 	
@@ -89,7 +89,7 @@ var docReadyFunction = function(){
 	infoSiteManager = new InfoSite.thing.Manager();
 
 	Ext.create('Ext.container.Viewport', {
-		layout: 'border' ,
+		layout: 'fit' ,
 		items: 	[ infoSiteManager.mainPanel ] ,
 		renderTo : Ext.getBody() ,
 		id: 'infoSiteManagerViewPort' ,
